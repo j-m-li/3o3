@@ -6,12 +6,15 @@ sudo apt install build-essential git curl libtinfo5 iverilog
 ./build.cmd
 ```
 
+## Ternary logic computer... 
 
 ![cpu](cpu.jpg)
 
 
 
 ## Some links
+
+https://homepage.cs.uiowa.edu/~jones/ternary/
 
 https://www.youtube.com/watch?v=J94FavGqvCQ
 

@@ -38,7 +38,7 @@ initial begin
 	$monitor("%t: %h %b %b %b", $time, rst, mosi, miso, r);
 	rst = 0;
 	#100
-	compare33_3(r, 6'b000010, 6'b000001);
+	compare333_3(r, 6'b000010, 6'b000001);
 	$display("R %h", r);
 	`assert(rst, 0);
 	$finish;

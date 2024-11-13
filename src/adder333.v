@@ -5,7 +5,7 @@
 //
 
 
-task adder33_3 (
+task adder333_3 (
 	output reg [1:0] O_s,
 	output reg [1:0] O_c,
 	input [5:0] I_a,

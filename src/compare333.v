@@ -5,7 +5,7 @@
 //
 
 
-task compare33_3 (
+task compare333_3 (
 	output reg [1:0] O_c,
 	input [5:0] I_a,
 	input [5:0] I_b
@@ -17,11 +17,11 @@ reg [1:0] c_2;
 reg [1:0] c_10;
 
 begin
-	compare33_y(c_0, I_a[1:0], I_b[1:0]);
-	compare33_y(c_1, I_a[3:2], I_b[3:2]);
-	compare33_y(c_2, I_a[5:4], I_b[5:4]);
-	compare33_x(c_10, c_0, c_1);
-	compare33_x(O_c, c_10, c_2);
+	compare333_y(c_0, I_a[1:0], I_b[1:0]);
+	compare333_y(c_1, I_a[3:2], I_b[3:2]);
+	compare333_y(c_2, I_a[5:4], I_b[5:4]);
+	compare333_x(c_10, c_0, c_1);
+	compare333_x(O_c, c_10, c_2);
 end
 endtask
 
@@ -29,7 +29,7 @@ endtask
 // - = <
 // 0 = =
 // + = >
-task compare33_x (
+task compare333_x (
 	output reg [1:0] O_c,
 	input [1:0] I_a,
 	input [1:0] I_b
@@ -67,7 +67,7 @@ endtask
 // - = <
 // 0 = =
 // + = >
-task compare33_y (
+task compare333_y (
 	output reg [1:0] O_c,
 	input [1:0] I_a,
 	input [1:0] I_b
