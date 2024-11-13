@@ -10,3 +10,13 @@ sudo apt install build-essential git curl libtinfo5 iverilog
 ![cpu](cpu.jpg)
 
 
+
+## Some links
+
+https://www.youtube.com/watch?v=J94FavGqvCQ
+
+https://bailleux.net/pub/ob-project-gray1.pdf
+
+https://www.youtube.com/watch?v=J-pyCxMg-xg
+
+

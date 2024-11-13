@@ -2,6 +2,8 @@
 // This software is dedicated to the public domain.
 //
 
+`include "ternary.v"
+
 module top (
 	input I_clk,
 	input I_rst,
@@ -11,30 +13,38 @@ module top (
 	input [1:0] I_miso
 );
 
-localparam ZERO = 2'b00;
-localparam PLUS = 2'b01;
-localparam MINUS = 2'b10;
-
 reg [1:0] x;
-
+reg [1:0] a;
+reg [1:0] b;
+reg [1:0] s;
+reg [1:0] c;
 always @(posedge I_clk) begin
-
-	if (I_rst) begin
+	case (I_rst)
+	1'b1: begin
 		O_mosi <= 0;
-	end else begin
-		O_mosi <= I_clk;
 	end
+	default: begin
+		O_mosi <= {1'b1, I_clk};
+		neg3(O_sck, x);
+		full33(s, c, a, x, 2'b00);
+	//	O_sck <= x;
+	end
+	endcase
 end
 
 always @(*) begin
-	x <= ZERO;
-	if (!I_rst) begin
+	case (I_rst)
+	1'b1: begin
+		x <= ZERO;
+	end
+	1'b0: begin
 		case (I_miso)
 		PLUS: x <= PLUS;
 		MINUS: x <= PLUS;
 		default: x <= ZERO;
 		endcase
-	end	
+	end
+	endcase	
 end
 
 endmodule

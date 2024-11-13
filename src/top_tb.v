@@ -5,19 +5,24 @@
 `timescale 1ns / 1ns
 
 `define assert(a, b) \
-	if (a !== b) begin \
+	case (a !== b) \
+	1'b0: begin end \
+	default: begin \
 		$display("assertion FAILED %h !== %h", a, b); \
 		$finish; \
-	end
+	end \
+	endcase
 
 module test_bench;
 
 reg clk;
 reg rst;
 
-wire [0:1] mosi;
-wire [0:1] miso;
-wire [0:1] sck;
+wire [1:0] mosi;
+wire [1:0] miso;
+wire [1:0] sck;
+
+reg [1:0] r  = 2'b11;
 
 top dut (
 	.I_clk(clk),
@@ -28,10 +33,14 @@ top dut (
 	.O_sck(sck)
 );
 
+
 initial begin
-	$monitor("%t: %h %b %b %b", $time, rst, mosi, miso, sck);
+	$monitor("%t: %h %b %b %b", $time, rst, mosi, miso, r);
 	rst = 0;
 	#100
+	compare33_3(r, 6'b000010, 6'b000001);
+	$display("R %h", r);
+	`assert(rst, 0);
 	$finish;
 end
 
