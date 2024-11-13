@@ -9,9 +9,9 @@ task is_true3 (
 
 begin
 	case (I_a)
-	2'b10:    O_c <= 2'b10; // -
-	default:  O_c <= 2'b10; // 0
-	2'b01:    O_c <= 2'b01;	// +
+	2'b10:    O_c = 2'b10; // -
+	default:  O_c = 2'b10; // 0
+	2'b01:    O_c = 2'b01;	// +
 	endcase	
 end
 

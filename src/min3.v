@@ -9,9 +9,9 @@ task min3 (
 
 begin
 	case (I_a)
-	2'b10:    O_c <= 2'b10; // -
-	default:  O_c <= 2'b00; // 0
-	2'b01:    O_c <= 2'b00;	// +
+	2'b10:    O_c = 2'b10; // -
+	default:  O_c = 2'b00; // 0
+	2'b01:    O_c = 2'b00;	// +
 	endcase	
 end
 

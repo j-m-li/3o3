@@ -12,19 +12,19 @@ task decoder3 (
 begin
 	case (I_a)
 	2'b10: begin // -
-		O_n <= 2'b01;
-		O_z <= 2'b10;
-		O_p <= 2'b10;
+		O_n = 2'b01;
+		O_z = 2'b10;
+		O_p = 2'b10;
 	end
 	default: begin  // 0
-		O_n <= 2'b10;
-		O_z <= 2'b01;
-		O_p <= 2'b10;
+		O_n = 2'b10;
+		O_z = 2'b01;
+		O_p = 2'b10;
 	end
 	2'b01: begin // +
-		O_n <= 2'b10;
-		O_z <= 2'b00;
-		O_p <= 2'b11;
+		O_n = 2'b10;
+		O_z = 2'b00;
+		O_p = 2'b11;
 	end
 	endcase	
 end
