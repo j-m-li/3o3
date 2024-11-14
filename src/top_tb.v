@@ -23,7 +23,8 @@ wire [1:0] miso;
 wire [1:0] sck;
 
 reg [1:0] r  = 2'b11;
-
+reg [1:0] c;
+reg [3:0] s;
 top dut (
 	.I_clk(clk),
 	.I_rst(rst),
@@ -38,8 +39,12 @@ initial begin
 	$monitor("%t: %h %b %b %b", $time, rst, mosi, miso, r);
 	rst = 0;
 	#100
-	compare333_3(r, 6'b000010, 6'b000001);
-	$display("R %h", r);
+	compare333_2(r, 4'b0010, 4'b0001);
+	$display("R %b", r);
+	#100
+	adder333_2(s, c, 4'b0001, 4'b0010, 2'b01);
+	$display("A %b %b", s, c);
+	#100
 	`assert(rst, 0);
 	$finish;
 end

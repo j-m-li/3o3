@@ -29,6 +29,7 @@ localparam MINUS = 2'b10;
 `include "equal33.v"
 `include "half33.v"
 `include "full33.v"
+`include "adder33.v"
 `include "compare333.v"
 `include "adder333.v"
 

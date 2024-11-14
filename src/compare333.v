@@ -5,23 +5,19 @@
 //
 
 
-task compare333_3 (
+task compare333_2 (
 	output reg [1:0] O_c,
-	input [5:0] I_a,
-	input [5:0] I_b
+	input [3:0] I_a,
+	input [3:0] I_b
 );
 
 reg [1:0] c_0;
 reg [1:0] c_1;
-reg [1:0] c_2;
-reg [1:0] c_10;
 
 begin
 	compare333_y(c_0, I_a[1:0], I_b[1:0]);
 	compare333_y(c_1, I_a[3:2], I_b[3:2]);
-	compare333_y(c_2, I_a[5:4], I_b[5:4]);
-	compare333_x(c_10, c_0, c_1);
-	compare333_x(O_c, c_10, c_2);
+	compare333_x(O_c, c_0, c_1);
 end
 endtask
 
