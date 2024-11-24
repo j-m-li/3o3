@@ -22,4 +22,6 @@ https://bailleux.net/pub/ob-project-gray1.pdf
 
 https://www.youtube.com/watch?v=J-pyCxMg-xg
 
+https://www.youtube.com/watch?v=seyHAFpsoP8
+
 
